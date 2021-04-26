@@ -66,7 +66,7 @@ public class CustomActions implements BSCustomActions {
                     boolean shop_opened = false;
                     if (ClassManager.manager.getPlugin().getAPI().isValidShop(p.getOpenInventory())) {
                         BSShopHolder holder = ((BSShopHolder) p.getOpenInventory().getTopInventory().getHolder());
-                        if (holder.getShop().equals(shop.getShopEdit())) {
+                        if (holder != null && holder.getShop().equals(shop.getShopEdit())) {
                             shop_opened = true;
                         }
                     }

@@ -64,7 +64,7 @@ public class Settings {
         this.slot_permissions_enabled = config.getBoolean("SlotPermissions.Enabled");
         this.slot_permissions = new HashMap<String, Integer>();
         for (String line : config.getStringList("SlotPermissions.List")) {
-            String parts[] = line.split(":");
+            String[] parts = line.split(":");
             slot_permissions.put(parts[0], InputReader.getInt(parts[1], 0));
         }
         this.editdelay = InputReader.getInt(config.get("ShopEditDelay"), 60);

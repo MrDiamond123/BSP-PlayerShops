@@ -3,7 +3,6 @@ package org.black_ixx.bossshop.addon.playershops.listener;
 import org.black_ixx.bossshop.addon.playershops.PlayerShops;
 import org.black_ixx.bossshop.managers.ClassManager;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
@@ -38,7 +37,7 @@ public class SignListener implements Listener {
                 String line2 = ChatColor.stripColor(e.getLine(1));
                 Player p = e.getPlayer();
                 if (!p.hasPermission("PlayerShops.createSign")
-                        || (playershop & !line2.equalsIgnoreCase(p.getName()) & !p.hasPermission("PlayerShops.createSign.other"))) {
+                        || (playershop & !(line2 != null && line2.equalsIgnoreCase(p.getName())) & !p.hasPermission("PlayerShops.createSign.other"))) {
                     ClassManager.manager.getMessageHandler().sendMessage("Main.NoPermission", e.getPlayer());
                     e.setCancelled(true);
                     return;
@@ -75,7 +74,6 @@ public class SignListener implements Listener {
             if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 
                 Block b = e.getClickedBlock();
-                if (b.getType() == Material.SIGN || b.getType() == Material.WALL_SIGN) {
 
                     if (b.getState() instanceof Sign) {
                         Sign s = (Sign) b.getState();
@@ -88,7 +86,6 @@ public class SignListener implements Listener {
                         }
 
                     }
-                }
             }
         }
     }

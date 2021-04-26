@@ -127,9 +127,7 @@ public class PlayerShops extends BossShopAddonConfigurable {
         return bslistener;
     }
 
-    public SignListener getSignListener() {
-        return signlistener;
-    }
+   //public SignListener getSignListener() {return signlistener; }
 
     public CustomActions getActions() {
         return actions;

@@ -4,8 +4,9 @@ import org.black_ixx.bossshop.addon.playershops.PlayerShops;
 import org.black_ixx.bossshop.addon.playershops.managers.SaveManager.REASON_SAVE;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.world.WorldSaveEvent;
+import org.bukkit.event.Listener;
 
-public class WorldListener {
+public class WorldListener implements Listener {
 
 
     private PlayerShops plugin;
