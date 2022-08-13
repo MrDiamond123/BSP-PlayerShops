@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.black_ixx.bossshop.managers.ClassManager;
 import org.black_ixx.bossshop.misc.userinput.BSUserInput;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
