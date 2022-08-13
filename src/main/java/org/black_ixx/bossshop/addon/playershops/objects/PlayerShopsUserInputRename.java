@@ -43,6 +43,7 @@ public class PlayerShopsUserInputRename extends BSUserInput {
             openInventorySync(p);
 
         }
+    }
     private void openInventorySync(final Player p) {
         Bukkit.getScheduler().runTask(shop.getPlugin(), new Runnable() {
             @Override
@@ -50,6 +51,5 @@ public class PlayerShopsUserInputRename extends BSUserInput {
                 shop.getShopEdit().openInventory(p);
             }
         });
-    }
     }
 }
