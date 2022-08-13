@@ -40,8 +40,16 @@ public class PlayerShopsUserInputRename extends BSUserInput {
             }
             shop.setShopDisplayName(text);
             shop.updateIcon(p);
-            shop.getShopEdit().openInventory(p);
+            openInventorySync(p);
 
         }
+    private void openInventorySync(final Player p) {
+        Bukkit.getScheduler().runTask(shop.getPlugin(), new Runnable() {
+            @Override
+            public void run() {
+                shop.getShopEdit().openInventory(p);
+            }
+        });
+    }
     }
 }
